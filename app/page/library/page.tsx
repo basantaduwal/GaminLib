@@ -3,7 +3,7 @@ import { useGameStore } from "@/app/Store/gameStore";
 import React, { useState } from "react";
 
 const Library = () => {
-  const { games } = useGameStore();
+  const { games, removeGame } = useGameStore();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
@@ -82,8 +82,19 @@ const Library = () => {
               <div key={game.id} className="bg-[#1E1E2F] rounded-lg overflow-hidden shadow-lg">
                 
                 <div className="p-4">
-                  <h2 className="text-lg font-bold text-white/70">{game.title}</h2>
-                  <p className="text-sm text-gray-400">{game.genre} | {game.state.charAt(0).toUpperCase() + game.state.slice(1)}</p>
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h2 className="text-lg font-bold text-white/70">{game.title}</h2>
+                      <p className="text-sm text-gray-400">{game.genre} | {game.state.charAt(0).toUpperCase() + game.state.slice(1)}</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => removeGame(game.id)}
+                      className="rounded-2xl border border-red-500/30 bg-red-500/10 px-3 py-2 text-xs font-semibold text-red-300 transition hover:bg-red-500/20 hover:text-red-100"
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

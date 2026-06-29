@@ -14,6 +14,7 @@ interface Game {
 interface GameState {
   games: Game[]
   setGames: (games: Game[]) => void
+  removeGame: (id: number) => void
 }
 
 const dummyGames: Game[] = [
@@ -76,4 +77,7 @@ const dummyGames: Game[] = [
 export const useGameStore = create<GameState>((set)=>({
   games: dummyGames,
   setGames: (games: Game[]) => set({ games }),
+  removeGame: (id: number) => set(state => ({
+    games: state.games.filter(game => game.id !== id),
+  })),
 }))
