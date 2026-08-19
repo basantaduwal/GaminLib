@@ -83,27 +83,8 @@ This project uses Zustand for client-side state management.
 - Update dashboard cards and library filters in their respective page components
 - Modify navigation links in `app/components/common/Navbar.tsx`
 
-## Notes
+## Deployment
 
-- The project currently uses a placeholder login page.
-- The library removal feature updates state live in the UI, and the app persists only during the browser session.
+The project is deployed at:
 
-## Dependencies
-
-- `next` 16.2.1
-- `react` 19.2.4
-- `react-dom` 19.2.4
-- `zustand` ^5.0.12
-- `lucide-react` ^1.7.0
-
-## Dev Dependencies
-
-- `typescript` ^5
-- `tailwindcss` ^4
-- `@tailwindcss/postcss` ^4
-- `eslint` ^9
-- `eslint-config-next` 16.2.1
-
-## License
-
-This project is currently unlicensed. Add a license file if you want to open-source it.
+https://gaminlib.vercel.app/
